@@ -74,4 +74,10 @@ def form(request):
 def warehouses(request):
     return render(request, 'warehouses/index.html')
 
+def create(request):
+    return render(request, 'warehouses/create.html')
+
+def edit(request):
+    return render(request, 'warehouses/edit.html')
+
 

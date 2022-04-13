@@ -11,7 +11,14 @@ urlpatterns = [
     path('routes', views.create, name="create"),
     path('routes', views.edit, name="edit"),
     path('customers', views.customers, name="customers"),
-    path('warehouses', views.warehouses, name="warehouses")
+    path('customers', views.create, name="create"),
+    path('customers', views.edit, name="edit"),
+    path('warehouses', views.warehouses, name="warehouses"),
+    path('warehouses', views.create, name="create"),
+    path('warehouses', views.edit, name="edit"),
+    path('users', views.users, name="users"),
+    path('users', views.create, name="create"),
+    path('users', views.edit, name="edit")
 ]
 
 
