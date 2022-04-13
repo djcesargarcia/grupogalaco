@@ -10,25 +10,25 @@
       <a href="#" class="w3-bar-item w3-button">Link 3</a>
     </div>
   </div>
-  <!-- Modal Form with Close button inside the navigation bar-->
-  <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-light-grey">Login</button>
-  <div id="id01" class="w3-modal">
-    <div class="w3-modal-content 	w3-border w3-round-large">
-      <header class="w3-container w3-ligh-gray"> 
-        <div class="w3-center"><br>
-          <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-round-large w3-hover-red w3-display-topright" title="Close Modal">&times;</span>
-          <img src="../static/imgs/img_avatar4.png" alt="Foto Avatar" style="width:20%" class="w3-circle w3-margin-top">
+  <button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Iniciar Sesion</button>
+    <div id="id01" class="w3-modal">
+      <div class="w3-modal-content">
+        <div class="w3-container">
+          <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+          <!-- Form in Django with StyLES w3.css-->
+          <form class="w3-container" method="post">
+            {% csrf_token %}
+            <label class="w3-label">User Name</label>
+               <input class="w3-input" type="text">
+            <label class="w3-label">Password</label>
+               <input class="w3-input" type="text">
+            <input type="submit" value="Submit">
+          </form>
         </div>
-        <form class="w3-container" action="/action_page.php">
-          <div class="w3-section">
-            <label><b>Username</b></label>
-            <input class="w3-input w3-border w3-margin-bottom" type="text" placeholder="Enter Username" name="username" required>
-            <label><b>Password</b></label>
-            <input class="w3-input w3-border" type="password" placeholder="Enter Password" name="psw" required>
-            <button class="w3-button w3-block w3-dark-gray w3-section w3-padding" type="submit">Login</button>
-            <input class="w3-check w3-margin-top" type="checkbox" checked="checked"> Remember me
-          </div>
-        </form>
+      </div>
     </div>
-  </div>
-</div> 
+</div>
+    
+    
+  
+
