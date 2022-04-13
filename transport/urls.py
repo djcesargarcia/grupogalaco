@@ -10,7 +10,8 @@ urlpatterns = [
     path('routes', views.routes, name="routes"),
     path('routes', views.create, name="create"),
     path('routes', views.edit, name="edit"),
-    path('customers', views.customers, name="customers")
+    path('customers', views.customers, name="customers"),
+    path('warehouses', views.warehouses, name="warehouses")
 ]
 
 
