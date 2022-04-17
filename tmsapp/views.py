@@ -4,3 +4,6 @@ from django.shortcuts import render
 
 def tmsapp(request):
     return render(request, 'tmsapp/inicio.html', {})
+
+def home(request):
+    return render(request, 'tmsapp/home.html', {})
