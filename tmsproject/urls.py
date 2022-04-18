@@ -17,13 +17,8 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-<<<<<<< HEAD
     
     path('admin/', admin.site.urls),
-    path('', include('drivers.urls')),
-    path('', include('tmsapp.urls'))
-=======
-    path('admin/', admin.site.urls),
     path('', include('driver.urls')),
->>>>>>> 3462b1d (Adding different models like routes)
+    path('', include('tmsapp.urls'))
 ]

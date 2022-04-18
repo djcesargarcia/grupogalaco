@@ -13,11 +13,6 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from pathlib import Path
 import os
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 3462b1d (Adding different models like routes)
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -43,14 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-<<<<<<< HEAD
-    'drivers',
-    'tmsapp'
-=======
     'driver',
     'login',
     'routes'
->>>>>>> 3462b1d (Adding different models like routes)
 ]
 
 MIDDLEWARE = [
@@ -142,10 +132,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'')
 MEDIA_URL = '/images/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-<<<<<<< HEAD
+
 
 # We should specify to redirect the user upon a succesful login 
 
 LOGIN_REDIRECT_URL = "/"
-=======
->>>>>>> 3462b1d (Adding different models like routes)
