@@ -16,15 +16,16 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>{{ driver.id }}</td>
-                    <td>{{ driver.name }}</td>
-                    <td>{{ driver.nif }}</td>
+                    <td>{{ route.place }}</td>
+                    <td>{{ route.origin }}</td>
+                    <td>{{ route.destiny }}</td>
+                    <td>{{ route.postal_code }}</td>
                     <td>
                         <img src="{{ driver.image.url }}" height="100">
                     </td>
                     <td>{{ driver.adress }}</td>
-                    <td><a name="" id="" class="btn btn-info" href="{% url 'edit_drivers' driver.id %}" role="button">Edit</a>
-                         | <a name="" id="" class="btn btn-danger" href="{% url 'delete_drivers' driver.id %}" role="button">Delete</a></td>
+                    <td><a name="" id="" class="btn btn-info" href="{% url 'edit_routes' route.id %}" role="button">Edit</a>
+                         | <a name="" id="" class="btn btn-danger" href="{% url 'delete_routes' route.id %}" role="button">Delete</a></td>
                 </tr>
                 {% endfor %}
             </tbody>
