@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'driver',
     'login',
-    'routes'
+    'routes',
+    'tmsapp'
 ]
 
 MIDDLEWARE = [

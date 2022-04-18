@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block titulo %} Driver List {% endblock %}
+{% block titulo %} Routes List {% endblock %}
 
 {% block contenido %} 
 
@@ -9,10 +9,10 @@
         <a name="" id="" class="btn btn-success" href="{% url 'create_routes' %}" role="button">Add new route</a>
     </div>
     <div class="card-body">
-        <h4 class="card-title">Drivers</h4>
+        <h4 class="card-title">Routes</h4>
         <table class="table">
             <thead>
-                {% for driver in drivers %}
+                {% for route in routes %}
             </thead>
             <tbody>
                 <tr>
