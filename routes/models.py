@@ -14,3 +14,7 @@ class Routes(models.Model):
     def __str__(self) -> str:
         fila = "Place: " + self.name + " - " + "Origin: " + self.origin + " - " + "Destiny: " + self.destiny + " - " + "Postal Code: " + self.postal_code
         return fila
+    
+    def delete(self, using=None, keep_parents=False):
+        self.image.storage.delete(self.image.name)
+        super().delete()
