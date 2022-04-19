@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'driver',
     'login',
     'routes',
-    'tmsapp'
+    'tmsapp',
 ]
 
 MIDDLEWARE = [

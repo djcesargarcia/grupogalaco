@@ -1,17 +1,28 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.http import HttpResponse
 from .models import Login
+from .forms import LoginForm
+from django.contrib import messages
+
+# Create your views here.
 
 # Create your views here.
 
 def login(request):
+    print("Your account has been created.")
     return render (request, 'login/index.html', {})
 
-def login_signin(request):
-    return render(request, 'login/signin.html',{})
+def log_in(request):
+    return render(request, 'login/log_in.html',{})
 
-def login_signout(request):
-    return render(request, 'login/signout.html',{})
+def log_out(request):
+    return render(request, 'login/log_out.html',{})
 
-def login_signup(request):
-    return render(request, 'login/signup.html',{})
+def sign_up(request):
+    form = LoginForm(request.POST or None, request.FILES or None)
+    if form.is_valid():
+        form.save()
+        messages.success(request, 'Your account has been created.')
+        return redirect('log_in')
+    return render(request, 'login/sign_up.html',{'form':form})
 

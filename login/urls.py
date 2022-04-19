@@ -6,9 +6,9 @@ from . import views
 urlpatterns = [
     
     path('login/',views.login, name="login"),
-    path('login/signin',views.login_signin, name="login_signin"),
-    path('login/signout',views.login_signout, name="login_signout"),
-    path('login/signup',views.login_signout, name="login_signup"),
+    path('login/log_in',views.log_in, name="log_in"),
+    path('login/log_out',views.log_out, name="log_out"),
+    path('login/sign_up',views.sign_up, name="register"),
     
     
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

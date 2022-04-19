@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'drivers',
     'tmsapp',
     'routes',
+    'login'
 ]
 
 MIDDLEWARE = [
@@ -138,3 +139,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # We should specify to redirect the user upon a succesful login 
 
 LOGIN_REDIRECT_URL = "/"
+
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
