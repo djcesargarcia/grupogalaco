@@ -20,5 +20,6 @@ urlpatterns = [
     
     path('admin/', admin.site.urls),
     path('', include('drivers.urls')),
-    path('', include('tmsapp.urls'))
+    path('', include('tmsapp.urls')),
+    path('', include('login.urls'))
 ]
