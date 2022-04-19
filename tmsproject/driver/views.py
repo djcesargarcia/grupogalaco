@@ -2,14 +2,18 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Driver
 from .forms import DriverForm
-# Create your views here.
+from django.contrib.auth.decorators import login_required
 
+# Create your views here.
+@login_required
 def inicio(request):
     return render(request, 'pages/inicio.html')
 
+@login_required
 def nosotros(request):
     return render(request, 'pages/nosotros.html')
 
+@login_required
 def drivers(request):
     drivers = Driver.objects.all()
     return render(request, 'drivers/index.html',{'drivers': drivers})

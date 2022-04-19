@@ -2,18 +2,23 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Driver
 from .forms import DriverForm
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
+@login_required
 def inicio(request):
     return render(request, 'pages/inicio.html')
 
+@login_required
 def nosotros(request):
     return render(request, 'pages/nosotros.html')
 
+@login_required
 def drivers(request):
     drivers = Driver.objects.all()
     return render(request, 'drivers/index.html',{'drivers': drivers})
 
+@login_required
 def create_drivers(request):
     form = DriverForm(request.POST or None, request.FILES or None)
     if form.is_valid():
@@ -21,6 +26,7 @@ def create_drivers(request):
         return redirect('drivers')
     return render(request, 'drivers/create.html',{'form':form})
 
+@login_required
 def edit_drivers(request, id):
     driver = Driver.objects.get(id=id)
     form = DriverForm(request.POST or None, request.FILES or None, instance=driver)
@@ -29,6 +35,7 @@ def edit_drivers(request, id):
         return redirect('drivers')
     return render(request,'drivers/edit.html',{'form':form})
 
+@login_required
 def delete_drivers(request, id):
     driver = Driver.objects.get(id=id)
     driver.delete()

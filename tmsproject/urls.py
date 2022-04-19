@@ -22,5 +22,6 @@ urlpatterns = [
     path('', include('driver.urls')),
     path('', include('tmsapp.urls')),
     path('', include('routes.urls')),
-    path('', include('login.urls'))
+    path('', include('login.urls')),
+    path('accounts/', include('django.contrib.auth.urls'))
 ]

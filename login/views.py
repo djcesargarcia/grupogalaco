@@ -1,9 +1,10 @@
-from django.shortcuts import render, redirect
-from django.http import HttpResponse
-from .models import Login
+from django.shortcuts import  render, redirect
 from .forms import LoginForm
-from django.contrib import messages
 from django.contrib.auth import authenticate, login
+from django.contrib import messages
+from .models import Login
+
+
 
 # Create your views here.
 
@@ -12,20 +13,17 @@ def login(request):
     return render (request, 'login/index.html', {})
 
 def log_in(request):
-    form = LoginForm(request.POST)
-    if form.is_valid():
-        username = request.POST["username"]
-        password = request.POST["password"]
-        user = authenticate(username=username, password=password)
-        if user is not None:
-            if user.is_active:
-                login(request, user)
-                return redirect('login/log_in')
-            return HttpResponse('<h1>You are logged in</h1>')
-        return render(request, "login/log_in.html", {'form': form})
-    return render(request, "login/log_in.html", {'form': form})
-    
-    
+    username = request.methodPOST
+    password = request.POST.get['password']
+    user = authenticate(request, username=username, password=password)
+    if user is not None:
+        login(request, user)
+        redirect("inicio")
+    else:
+        messages.error("Your credentials are not valid.")
+        return redirect(request, 'login/log_error.html',{})
+        
+
 def log_out(request):
     return render(request, 'login/log_out.html',{})
 
@@ -43,4 +41,3 @@ def log_error(request):
 
 
 
-    
