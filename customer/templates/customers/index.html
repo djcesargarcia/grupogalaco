@@ -11,6 +11,12 @@
     <div class="card-body">
         <h4 class="card-title">Customer</h4>
         <table class="table">
+            <tr>
+                <td><p class="fw-bold">ID</p></td>
+                <td><p class="fw-bold">Name</p></td>
+                <td><p class="fw-bold">DNI</p></td>
+                <td><p class="fw-bold">Actions</p></td>
+            </tr>
             <thead>
                 {% for customer in customers %}
             </thead>
@@ -18,6 +24,7 @@
                 <tr>
                     <td>{{ customer.id }}</td>
                     <td>{{ customer.name }}</td>
+                    <td>{{ customer.dni }}</td>
                 
                     <td><a name="" id="" class="btn btn-info" href="{% url 'edit_customers' customer.id %}" role="button">Edit</a>
                          | <a name="" id="" class="btn btn-danger" href="{% url 'delete_customers' customer.id %}" role="button">Delete</a></td>

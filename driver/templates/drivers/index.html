@@ -11,10 +11,20 @@
     <div class="card-body">
         <h4 class="card-title">Drivers</h4>
         <table class="table">
+            <tr>
+                <td><p class="fw-bold">ID</p></td>
+                <td><p class="fw-bold">Name</p></td>
+                <td><p class="fw-bold">DNI</p></td>
+                <td><p class="fw-bold">Image</p></td>
+                <td><p class="fw-bold">Adress</p></td>
+                <td><p class="fw-bold">Actions</p></td>
+                
+            </tr>
             <thead>
                 {% for driver in drivers %}
             </thead>
             <tbody>
+               
                 <tr>
                     <td>{{ driver.id }}</td>
                     <td>{{ driver.name }}</td>

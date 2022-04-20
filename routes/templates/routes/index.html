@@ -11,19 +11,30 @@
     <div class="card-body">
         <h4 class="card-title">Routes</h4>
         <table class="table">
+            <tr>
+                <td><p class="fw-bold">ID</p></td>
+                <td><p class="fw-bold">Place</p></td>
+                <td><p class="fw-bold">Origin</p></td>
+                <td><p class="fw-bold">Destiny</p></td>
+                <td><p class="fw-bold">Image</p></td>
+                <td><p class="fw-bold">Postal Code</p></td>
+                <td><p class="fw-bold">Actions</p></td>
+                
+            </tr>
             <thead>
                 {% for route in routes %}
             </thead>
             <tbody>
+               
                 <tr>
+                    <td>{{ route.id }}</td>
                     <td>{{ route.place }}</td>
                     <td>{{ route.origin }}</td>
                     <td>{{ route.destiny }}</td>
-                    <td>{{ route.postal_code }}</td>
                     <td>
-                        <img src="{{ driver.image.url }}" height="100">
+                        <img src="{{ route.image.url }}" height="100">
                     </td>
-                    <td>{{ driver.adress }}</td>
+                    <td>{{ route.postal_code }}</td>
                     <td><a name="" id="" class="btn btn-info" href="{% url 'edit_routes' route.id %}" role="button">Edit</a>
                          | <a name="" id="" class="btn btn-danger" href="{% url 'delete_routes' route.id %}" role="button">Delete</a></td>
                 </tr>

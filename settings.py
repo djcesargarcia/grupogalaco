@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'routes',
     'login',
     'customer',
+    'article',
 ]
 
 MIDDLEWARE = [
