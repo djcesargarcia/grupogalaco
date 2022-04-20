@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block titulo %} Customer List {% endblock %}
+
+{% block contenido %} 
+
+<div class="card">
+    <div class="card-header">
+        <a name="" id="" class="btn btn-success" href="{% url 'create_customers' %}" role="button">Add new customer</a>
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Customer</h4>
+        <table class="table">
+            <thead>
+                {% for customer in customers %}
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ customer.id }}</td>
+                    <td>{{ customer.name }}</td>
+                
+                    <td><a name="" id="" class="btn btn-info" href="{% url 'edit_customers' customer.id %}" role="button">Edit</a>
+                         | <a name="" id="" class="btn btn-danger" href="{% url 'delete_customers' customer.id %}" role="button">Delete</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
+    </div>
+</div>
+
+{% endblock %}
