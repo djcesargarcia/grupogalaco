@@ -7,7 +7,6 @@ from .models import Login
 # Create your views here.
 
 def login(request):
-    print("Your account has been created.")
     return render (request, 'login/index.html', {})
 
         

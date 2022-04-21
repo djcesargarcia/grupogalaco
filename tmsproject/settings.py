@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'tmsapp',
     'customer',
     'article',
+    'order',
 ]
 
 MIDDLEWARE = [

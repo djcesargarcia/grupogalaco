@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block titulo %} Edit order {% endblock %}
+
+{% block contenido %} 
+
+<div class="card">
+    <div class="card-header">
+        Edit an order
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Order details</h4>
+       {% include 'orders/form.html' %}
+    </div>
+    <div class="card-footer text-muted">
+        
+    </div>
+</div>
+
+{% endblock %}

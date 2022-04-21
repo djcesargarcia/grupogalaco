@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block titulo %} Order List {% endblock %}
+
+{% block contenido %} 
+
+<div class="card">
+    <div class="card-header">
+        <a name="" id="" class="btn btn-success" href="{% url 'create_orders' %}" role="button">Add new order</a>
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Orders</h4>
+        <table class="table">
+            <tr>
+                <td><p class="fw-bold">ID</p></td>
+                <td><p class="fw-bold">Name</p></td>
+                <td><p class="fw-bold">Description</p></td>
+                <td><p class="fw-bold">Code Buy</p></td>
+                <td><p class="fw-bold">Cuantity</p></td>
+                <td><p class="fw-bold">Date Buy</p></td>
+                <td><p class="fw-bold">Date Out</p></td>
+                <td><p class="fw-bold">Actions</p></td>
+                
+            </tr>
+            <thead>
+                {% for order in orders %}
+            </thead>
+            <tbody>
+               
+                <tr>
+                    <td>{{ order.id }}</td>
+                    <td>{{ order.name }}</td>
+                    <td>{{ order.description }}</td>
+                    <td>{{ order.code_buy }}</td>
+                    <td>{{ order.cuantity }}</td>
+                    <td>{{ order.date_buy }}</td>
+                    <td>{{ order.date_out }}</td>
+                
+                <td><a name="" id="" class="btn btn-info" href="{% url 'edit_orders' order.id %}" role="button">Edit</a>
+                    | <a name="" id="" class="btn btn-danger" href="{% url 'delete_orders' order.id %}" role="button">Delete</a></td>
+                </tr>
+           
+           {% endfor %}
+       </tbody>
+   </table>
+   
+</div>
+</div>
+
+{% endblock %}
