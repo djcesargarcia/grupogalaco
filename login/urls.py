@@ -6,6 +6,7 @@ from . import views
 urlpatterns = [
     
     path('registration/login',views.login, name="login"),
+    path('registration/logout', views.logout, name="logout")
     
     
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
