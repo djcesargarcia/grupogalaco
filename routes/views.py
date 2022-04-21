@@ -6,7 +6,11 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 @login_required
 def routes(request):
-    routes = Routes.objects.all()
+    if 'qtext' in request.GET:
+        qtext = request.GET['qtext']
+        routes = Routes.objects.filter(place__icontains=qtext)
+    else: 
+        routes = Routes.objects.all()
     return render(request, 'routes/index.html', {'routes':routes})
 
 @login_required
