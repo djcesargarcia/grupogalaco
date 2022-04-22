@@ -24,7 +24,6 @@
                 {% for driver in drivers %}
             </thead>
             <tbody>
-               
                 <tr>
                     <td>{{ driver.id }}</td>
                     <td>{{ driver.name }}</td>
@@ -37,9 +36,43 @@
                          | <a name="" id="" class="btn btn-danger" href="{% url 'delete_drivers' driver.id %}" role="button">Delete</a></td>
                 </tr>
                 {% endfor %}
+                <tr>
+                    <div class="row">
+                        <form>
+                            <div class="col-2" style="padding-right: 0em;">
+                                <input class="form-control" type="search" name="qtext" placeholder="Filter your data here">
+                            </div>
+                            <div class="col-4" style="padding:0em;">
+                                <input type="submit" class="btn btn-primary" value="Search"> 
+                            </div>
+                        </form>
+                    </div>
+                </tr>
             </tbody>
         </table>
-        
+        <nav aria-label="Page navigation example">
+            {% if drivers.has_other_pages %}
+                <ul class="pagination justify-content-end">
+                      {% if drivers.has_previous %}
+                        <li class="page-item"><a class="page-link " href="?page={{ drivers.previous_page_number }}">Previous</a></li>
+                      {% else %}
+                        <li class="disabled"></li>
+                      {% endif %}
+                    {% for i in drivers.paginator.page_range %}
+                        {% if drivers.number == i %}
+                            <li class="page-link"><span>{{ i }} <span class="sr-only"></span></span></li>
+                        {% else %}
+                            <li class="page-link"><a class="page-item" href="?page={{ i }}">{{ i }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+                    {% if drivers.has_next %}
+                        <li class="page-item"><a class="page-link" href="?page={{ drivers.next_page_number }}">Next</a></li>
+                    {% else %}
+                        <li class="disabled"></li>
+                    {% endif %}
+                    </ul>
+            {% endif %}
+        </nav>
     </div>
 </div>
 

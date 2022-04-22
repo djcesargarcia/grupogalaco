@@ -6,13 +6,23 @@ from django.http import HttpResponse
 from .models import Customer
 from .forms import CustomerForm
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 # Create your views here.
-
 
 @login_required
 def customers(request):
-    customers = Customer.objects.all()
-    return render(request, 'customers/index.html',{'customers': customers})
+    if 'qtext' in request.GET:
+        qtext = request.GET['qtext']
+        customers = Customer.objects.filter(name__icontains=qtext)
+    else: 
+        customers = Customer.objects.all()
+        page = request.GET.get('page',1)
+        paginator = Paginator(customers, 5)
+        try:
+            customers = paginator.page(page)
+        except EmptyPage:
+            customers = paginator.page(paginator.num_pages)
+    return render(request, 'customers/index.html', {'customers':customers})
 
 @login_required
 def create_customers(request):
