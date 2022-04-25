@@ -55,7 +55,29 @@
                 </tr>
             </tbody>
         </table>
-        
+        <nav aria-label="Page navigation example">
+            {% if routes.has_other_pages %}
+                <ul class="pagination justify-content-end">
+                      {% if routes.has_previous %}
+                        <li class="page-item"><a class="page-link " href="?page={{ routes.previous_page_number }}">Previous</a></li>
+                      {% else %}
+                        <li class="disabled"></li>
+                      {% endif %}
+                    {% for i in routes.paginator.page_range %}
+                        {% if routes.number == i %}
+                            <li class="page-link"><span>{{ i }} <span class="sr-only"></span></span></li>
+                        {% else %}
+                            <li class="page-link"><a class="page-item" href="?page={{ i }}">{{ i }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+                    {% if routes.has_next %}
+                        <li class="page-item"><a class="page-link" href="?page={{ routes.next_page_number }}">Next</a></li>
+                    {% else %}
+                        <li class="disabled"></li>
+                    {% endif %}
+                    </ul>
+            {% endif %}
+        </nav>
     </div>
 </div>
 

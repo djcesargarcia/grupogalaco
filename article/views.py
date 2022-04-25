@@ -3,13 +3,24 @@ from django.http import HttpResponse
 from .models import Article
 from .forms import ArticleForm
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 # Create your views here.
 
 @login_required
 def articles(request):
-    articles = Article.objects.all()
-    return render(request, 'articles/index.html',{'articles': articles})
+    if 'qtext' in request.GET:
+        qtext = request.GET['qtext']
+        articles = Article.objects.filter(name__icontains=qtext)
+    else: 
+        articles = Article.objects.all()
+        page = request.GET.get('page',1)
+        paginator = Paginator(articles, 5)
+        try:
+            articles = paginator.page(page)
+        except EmptyPage:
+            articles = paginator.page(paginator.num_pages)
+    return render(request, 'articles/index.html', {'articles':articles})
 
 @login_required
 def create_articles(request):

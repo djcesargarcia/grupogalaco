@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from .models import Driver
 from .forms import DriverForm
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 # Create your views here.
 
 @login_required
@@ -15,8 +16,18 @@ def nosotros(request):
 
 @login_required
 def drivers(request):
-    drivers = Driver.objects.all()
-    return render(request, 'drivers/index.html',{'drivers': drivers})
+    if 'qtext' in request.GET:
+        qtext = request.GET['qtext']
+        drivers = Driver.objects.filter(name__icontains=qtext)
+    else: 
+        drivers = Driver.objects.all()
+        page = request.GET.get('page',1)
+        paginator = Paginator(drivers, 5)
+        try:
+            drivers = paginator.page(page)
+        except EmptyPage:
+            drivers = paginator.page(paginator.num_pages)
+    return render(request, 'drivers/index.html', {'drivers':drivers})
 
 @login_required
 def create_drivers(request):
@@ -40,4 +51,5 @@ def delete_drivers(request, id):
     driver = Driver.objects.get(id=id)
     driver.delete()
     return redirect('drivers')
+
 
