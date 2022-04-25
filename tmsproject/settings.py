@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     'customer',
     'article',
     'order',
+    'rest_framework',
+    'api_app',
 ]
 
 MIDDLEWARE = [
@@ -76,6 +78,11 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'tmsproject.wsgi.application'
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAuthenticated',),
+    'DEFAULT_AUTHENTICATION_CLASSES': ('rest_framework.authentication.BasicAuthentication',),
+}
 
 
 # Database
