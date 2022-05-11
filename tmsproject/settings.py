@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     'order',
     'rest_framework',
     'api_app',
+    'country',
+    'maps',
 ]
 
 MIDDLEWARE = [

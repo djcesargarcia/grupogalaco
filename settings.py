@@ -48,7 +48,8 @@ INSTALLED_APPS = [
     'article',
     'order',
     'rest_framework',
-
+    'country',
+    'maps',
 ]
 
 MIDDLEWARE = [
@@ -153,4 +154,4 @@ LOGIN_REDIRECT_URL = "/"
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR,'login/static'),]
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static/'),

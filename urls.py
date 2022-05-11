@@ -18,12 +18,12 @@ from django.urls import path, include
 from django.contrib.auth import views as auth_views
 
 urlpatterns = [
-    
     path('admin/', admin.site.urls),
     path('', include('drivers.urls')),
     path('', include('tmsapp.urls')),
     path('', include('login.urls')),
     path('', include('articles.urls')),
+    path('', include('maps.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
     path('api/', include('api_app.urls')),
 ]
