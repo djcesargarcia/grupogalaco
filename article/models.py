@@ -1,5 +1,5 @@
 from django.db import models
-from django.forms import CharField
+from distutils.command.upload import upload
 
 # Create your models here.
 
@@ -11,5 +11,9 @@ class Article(models.Model):
     price = models.DecimalField(max_digits=4, decimal_places=2)
     
     def __str__(self):
-        fila = "Name: "+ self.name + " - " + "Weight: " + self.weight + " - " + "Qrcode: " + self.image + " - " + "Price: " + self.price
+        fila = "Name: "+ self.name + " - " + "Weight: " + self.weight + " - "
         return fila
+    
+    def delete(self, using=None, keep_parents=False):
+        self.image.storage.delete(self.image.name)
+        super().delete()

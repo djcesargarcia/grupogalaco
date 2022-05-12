@@ -1,4 +1,5 @@
 from django.db import models
+from article.models import Article
 
 # Create your models here.
 
@@ -10,8 +11,9 @@ class Order(models.Model):
     cuantity = models.IntegerField(verbose_name="Cuantity")
     date_buy = models.DateField(auto_now=True)
     date_out = models.DateField(auto_now=True)
+    order_article = models.ForeignKey(Article, related_name='articles', on_delete=models.CASCADE)
     
     def __str__(self):
-        fila = "Name: " + self.name + " - " + "Description: " + self.description + " - " +  "Code Buy: " + self.code_buy + " - " + "Cuantity: " + self.cuantity + " - " + "Date Buy: " + self.date_buy + " - " + "Date Out: " + self.date_out
+        fila = "Name: " + self.name + " - " + "Description: " + self.description 
         return fila
     

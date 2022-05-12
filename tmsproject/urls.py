@@ -26,6 +26,7 @@ urlpatterns = [
     path('', include('article.urls')),
     path('', include('order.urls')),
     path('', include('maps.urls')),
+    path('', include('distance.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
     path('api-auth',include('rest_framework.urls')),
     path('api/', include('api_app.urls')),
