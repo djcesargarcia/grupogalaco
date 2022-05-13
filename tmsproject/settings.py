@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'api_app',
     'country',
     'maps',
+    'provider',
 ]
 
 MIDDLEWARE = [

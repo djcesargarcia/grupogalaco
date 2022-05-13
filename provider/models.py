@@ -1,6 +1,7 @@
 from operator import le
 from django.db import models
 from distutils.command.upload import upload
+from article.models import Article
 
 # Create your models here.
 
@@ -11,6 +12,7 @@ class Provider(models.Model):
     dni = models.CharField(max_length=9, verbose_name="Dni")
     phone_number = models.CharField(max_length=9, verbose_name="Phone Number")
     image = models.ImageField(upload_to='images/', verbose_name='Imagen' ,null=True)
+    article_provider = models.ForeignKey(Article, related_name='articles_provider', on_delete=models.CASCADE)
        
     def __str__(self):
         fila = "Name: " + self.name + " - " + "City: " + self.city + " - " + "Dni: " + self.dni + " - " + "Phone Number: " + self.phone_number
