@@ -1,4 +1,3 @@
-from operator import le
 from django.db import models
 from distutils.command.upload import upload
 from article.models import Article
