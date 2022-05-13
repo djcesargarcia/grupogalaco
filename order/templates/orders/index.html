@@ -19,6 +19,7 @@
                 <td><p class="fw-bold">Cuantity</p></td>
                 <td><p class="fw-bold">Date Buy</p></td>
                 <td><p class="fw-bold">Date Out</p></td>
+                <td><p class="fw-bold">Articles</p></td>
                 <td><p class="fw-bold">Actions</p></td>
             </tr>
             <thead>
@@ -33,6 +34,7 @@
                     <td>{{ order.cuantity }}</td>
                     <td>{{ order.date_buy }}</td>
                     <td>{{ order.date_out }}</td>
+                    <td>{{ order.order_article }}</td>
                 <td><a name="" id="" class="btn btn-info" href="{% url 'edit_orders' order.id %}" role="button">Edit</a>
                     | <a name="" id="" class="btn btn-danger" href="{% url 'delete_orders' order.id %}" role="button">Delete</a></td>
                 </tr>

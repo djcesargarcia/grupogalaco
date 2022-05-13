@@ -1,38 +1,30 @@
-var map = L.map('map').setView([28.1185067,-15.4534041], 18);
-
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+var map = L.map('map').setView([28.1184878,-15.453404], 15);
+ 
+var tiles = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+        maxZoom: 18,
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+            'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        id: 'mapbox/streets-v11',
+        tileSize: 512,
+        zoomOffset: -1
 }).addTo(map);
+ 
+  // Put markers in Leaflet
+var marker = L.marker([28.11, -15.45]).addTo(map)
+  .bindPopup('<b>Estoy en las torres.').openPopup();
 
-// placeholders for the L.marker and L.circle representing user's current position and accuracy    
-var current_position, current_accuracy;
+  // Put popus in Leaflet
+var popup = L.popup()
+.setLatLng([28.11, -15.45])
+.setContent('I am a standalone popup.')
+.openOn(map);
 
-function onLocationFound(e) {
-  // if position defined, then remove the existing position marker and accuracy circle from the map
-  if (current_position) {
-      map.removeLayer(current_position);
-      map.removeLayer(current_accuracy);
-  }
-
-  var radius = e.accuracy / 2;
-
-  current_position = L.marker(e.latlng).addTo(map)
-    .bindPopup("You are within " + radius + " meters from this point").openPopup();
-
-  current_accuracy = L.circle(e.latlng, radius).addTo(map);
+function onMapClick(e) {
+  popup
+      .setLatLng(e.latlng)
+      .setContent('You clicked the map at ' + e.latlng.toString())
+      .openOn(map);
 }
 
-function onLocationError(e) {
-  alert(e.message);
-}
-
-map.on('locationfound', onLocationFound);
-map.on('locationerror', onLocationError);
-
-// wrap map.locate in a function    
-function locate() {
-  map.locate({setView: true, maxZoom: 16});
-}
-
-// call locate every 3 seconds... forever
-setInterval(locate, 3000);
+L.control.locate().addTo(map);
+loadMap('map');
