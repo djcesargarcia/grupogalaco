@@ -13,6 +13,10 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 from pathlib import Path
 import os
 
+import pytest
+from routes import tests
+from django.conf import settings
+
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -156,3 +160,5 @@ LOGIN_REDIRECT_URL = "/"
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 
 STATICFILES_DIRS = os.path.join(BASE_DIR, 'static/'),
+
+DJANGO_SETTINGS_MODULE = tests.settings
