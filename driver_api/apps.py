@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class ApiAppConfig(AppConfig):
+class DriverApiConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'api_app'
+    name = 'driver_api'

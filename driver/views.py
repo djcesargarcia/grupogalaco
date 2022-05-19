@@ -1,9 +1,11 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
+from numpy import VisibleDeprecationWarning
 from .models import Driver
 from .forms import DriverForm
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.views import View
 # Create your views here.
 
 @login_required
@@ -51,5 +53,10 @@ def delete_drivers(request, id):
     driver = Driver.objects.get(id=id)
     driver.delete()
     return redirect('drivers')
+
+
+
+    
+    
 
 

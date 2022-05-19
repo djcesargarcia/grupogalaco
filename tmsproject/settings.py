@@ -46,10 +46,10 @@ INSTALLED_APPS = [
     'article',
     'order',
     'rest_framework',
-    'api_app',
     'country',
     'maps',
     'provider',
+    'driver_api',
 ]
 
 MIDDLEWARE = [

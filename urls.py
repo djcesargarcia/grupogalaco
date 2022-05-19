@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from django.contrib.auth import views as auth_views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,5 +26,6 @@ urlpatterns = [
     path('', include('maps.urls')),
     path('', include('distance.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
-    path('api/', include('api_app.urls')),
+    path('',include('driver_api.urls')),
+    path('',include('routes_api.urls')),
 ]

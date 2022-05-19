@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
-
 import pytest
 from routes import tests
 from django.conf import settings
@@ -54,7 +53,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'country',
     'maps',
-    'provider',
+    'provider', 
 ]
 
 MIDDLEWARE = [
@@ -90,7 +89,6 @@ WSGI_APPLICATION = 'tmsproject.wsgi.application'
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAuthenticated',),
     'DEFAULT_AUTHENTICATION_CLASSES': ('rest_framework_simplejwt.authentication.JWTAuthentication',),
-
 }
 
 

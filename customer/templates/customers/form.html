@@ -16,7 +16,8 @@
         aria-describedby="helpId" 
         placeholder="{{ field.label }}"
         value="{{ field.value | default:'' }}"
-        />
+      />
+      <option type=""></option>
     </div>
     <div class="col-12 help-text">{{ field.errors }}</div>
   {% endfor %}
