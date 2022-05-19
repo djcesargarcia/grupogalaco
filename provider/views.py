@@ -7,7 +7,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 # Create your views here.
 
 @login_required
-def providers(request):
+def provider(request):
     if 'qtext' in request.GET:
         qtext = request.GET['qtext']
         providers = Provider.objects.filter(name__icontains=qtext)
@@ -19,10 +19,10 @@ def providers(request):
             providers = paginator.page(page)
         except EmptyPage:
             providers = paginator.page(paginator.num_pages)
-    return render(request, 'provider/index.html', {'providers':providers})
+    return render(request, 'provider/index.html', {'provider':provider})
 
 @login_required
-def create_providers(request):
+def create_provider(request):
     form = ProviderForm(request.POST or None, request.FILES or None)
     if form.is_valid():
         form.save()
@@ -30,7 +30,7 @@ def create_providers(request):
     return render(request, 'provider/create.html',{'form':form})
 
 @login_required
-def edit_providers(request, id):
+def edit_provider(request, id):
     providers = Provider.objects.get(id=id)
     form = ProviderForm(request.POST or None, request.FILES or None, instance=providers)
     if form.is_valid and request.POST:
@@ -39,7 +39,7 @@ def edit_providers(request, id):
     return render(request,'provider/edit.html',{'form':form})
 
 @login_required
-def delete_providers(request, id):
+def delete_provider(request, id):
     provider = Provider.objects.get(id=id)
     provider.delete()
     return redirect('provider')
