@@ -21,5 +21,6 @@ urlpatterns = [
     path('', include('driver.urls')),
     path('api/driver_api', include('driver_api.urls')),
     path('api/routes_api', include('routes_api.urls')),
+    path('api/provider_api', include('provider_api.urls')),
     path('api-auth/', include('rest_framework')),
 ]

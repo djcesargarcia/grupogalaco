@@ -10,7 +10,7 @@ class DriverSerializer(serializers.Serializer):
     nif = serializers.CharField(max_length=9)
     image = serializers.ImageField()
     adress = serializers.CharField(max_length=100)
-    driver_routes = serializers.StringRelatedField(many=True)
+    driver_routes = serializers.RelatedField(source='routes', read_only=True)
    
     def create(self,validated_data):
         return Driver.objects.create(**validated_data)

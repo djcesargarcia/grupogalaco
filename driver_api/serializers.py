@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from routes.models import Routes
+from driver.models import Driver
 from django.contrib.auth.models import models
 
 class DriverSerializer(serializers.Serializer):
@@ -8,6 +8,7 @@ class DriverSerializer(serializers.Serializer):
     nif = serializers.CharField(max_length=50)
     image = serializers.ImageField()
     adress = serializers.CharField(max_length=100)
-    
+    driver_routes = serializers.PrimaryKeyRelatedField(read_only=True)  
+
     
     

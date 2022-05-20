@@ -6,10 +6,10 @@
 
 <div class="card">
     <div class="card-header">
-        <a name="" id="" class="btn btn-success" href="{% url 'create_orders' %}" role="button">Add new order</a>
+        <a name="" id="" class="btn btn-success" href="{% url 'create_provider' %}" role="button">Add new provider</a>
     </div>
     <div class="card-body">
-        <h4 class="card-title">Orders</h4>
+        <h4 class="card-title">Providers</h4>
         <table class="table">
             <tr>
                 <td><p class="fw-bold">ID</p></td>
@@ -18,6 +18,7 @@
                 <td><p class="fw-bold">Dni</p></td>
                 <td><p class="fw-bold">Phone</p></td>
                 <td><p class="fw-bold">Image</p></td>
+                <td><p class="fw-bold">Articles</p></td>
                 <td><p class="fw-bold">Actions</p></td>
             </tr>
             <thead>
@@ -31,8 +32,9 @@
                     <td>{{ provider.dni }}</td>
                     <td>{{ provider.phone_number }}</td>
                     <td>{{ provider.image }}</td>   
-                <td><a name="" id="" class="btn btn-info" href="{% url 'edit_providers' provider.id %}" role="button">Edit</a>
-                    | <a name="" id="" class="btn btn-danger" href="{% url 'delete_providers' provider.id %}" role="button">Delete</a></td>
+                    <td>{{ provider.article_provider }}</td> 
+                <td><a name="" id="" class="btn btn-info" href="{% url 'edit_provider' provider.id %}" role="button">Edit</a>
+                    | <a name="" id="" class="btn btn-danger" href="{% url 'delete_provider' provider.id %}" role="button">Delete</a></td>
                 </tr>
                 {% endfor %}
                 <tr>

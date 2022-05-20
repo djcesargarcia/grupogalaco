@@ -6,7 +6,7 @@ from .serializers import DriverSerializer
 
 class DriverViewSet(viewsets.ModelViewSet):
     """
-    API endpoint that allows users to be viewed or edited.
+    API endpoint that allows drivers to be viewed or edited.
     """
     queryset = Driver.objects.all()
     serializer_class = DriverSerializer

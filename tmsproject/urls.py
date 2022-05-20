@@ -30,5 +30,6 @@ urlpatterns = [
     path('', include('provider.urls')),
     path('driver_api/', include('driver_api.urls')),
     path('routes_api/', include('routes_api.urls')),
+    path('provider_api/', include('provider_api.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
 ]
