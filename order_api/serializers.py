@@ -10,7 +10,7 @@ class OrderSerializer(serializers.Serializer):
     description = serializers.CharField(max_length=100)
     code_buy = serializers.IntegerField()
     cuantity = serializers.IntegerField()
-    date_buy = serializers.DateField(auto_now=True)
-    date_out = serializers.DateField(auto_now=True)
-    order_article = serializers.PrimaryKeyRelatedField(Article, read_only=True)
+    date_buy = serializers.DateField()
+    date_out = serializers.DateField()
+    order_article = serializers.PrimaryKeyRelatedField(source='orders',read_only=True)
     
