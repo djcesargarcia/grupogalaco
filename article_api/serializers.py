@@ -8,3 +8,6 @@ class ArticleSerializers(serializers.Serializer):
     weight = serializers.CharField(max_length=5)
     image = serializers.ImageField()
     price = serializers.DecimalField(max_digits=4, decimal_places=2)
+    
+    def create(self,validated_data):
+        return Article.objects.create(**validated_data)

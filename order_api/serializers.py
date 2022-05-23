@@ -12,5 +12,8 @@ class OrderSerializer(serializers.Serializer):
     cuantity = serializers.IntegerField()
     date_buy = serializers.DateField()
     date_out = serializers.DateField()
-    order_article = serializers.PrimaryKeyRelatedField(source='orders',read_only=True)
+    order_article = serializers.PrimaryKeyRelatedField(source='orders',write_only=True, queryset=Article.objects.all())
+  
+    def create(self,validated_data):
+        return Order.objects.create(**validated_data)
     

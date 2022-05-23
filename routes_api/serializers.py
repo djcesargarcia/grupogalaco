@@ -10,5 +10,8 @@ class RoutesSerializer(serializers.Serializer):
     postal_code = serializers.CharField(max_length=50)
     image = serializers.ImageField()
     
+    def create(self,validated_data):
+        return Routes.objects.create(**validated_data)
+    
     
     

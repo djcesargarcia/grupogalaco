@@ -1,4 +1,5 @@
 from rest_framework import serializers
+from article.models import Article
 from provider.models import Provider
 from django.contrib.auth.models import models
 
@@ -10,6 +11,9 @@ class ProviderSerializer(serializers.Serializer):
     dni = serializers.CharField(max_length=9)
     phone_number = serializers.CharField(max_length=9)
     image = serializers.ImageField()
-    article_provider = serializers.PrimaryKeyRelatedField(read_only=True)  
+    article_provider = serializers.PrimaryKeyRelatedField(write_only=True, queryset=Article.objects.all(),source='articles') 
+    
+    def create(self,validated_data):
+        return Provider.objects.create(**validated_data)
     
     

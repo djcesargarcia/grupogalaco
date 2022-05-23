@@ -13,4 +13,7 @@ class CustomerSerializer(serializers.Serializer):
     email = serializers.CharField(max_length=100)
     article_customer = serializers.PrimaryKeyRelatedField(read_only=True) 
     
+    def create(self,validated_data):
+        return Customer.objects.create(**validated_data)
+    
     
