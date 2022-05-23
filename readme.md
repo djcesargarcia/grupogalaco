@@ -1,3 +1,5 @@
+![Este es el logotipo de Galaco](/images/logogalaco.png)
+	
 # Aplicación de TMS para Grupo Galaco 
 - Sistema de Gestión del transporte para la logística del Grupo Galaco.
 Incluye mapa para la gestión del transporte en tiempo real así como 
