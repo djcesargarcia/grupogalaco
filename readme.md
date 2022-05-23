@@ -23,4 +23,7 @@ de los camiones en reparto para la asignación de las rutas más alternativas al
 rodado en la ciudad de Las Palmas.
 
 # Implementación de los archivos estáticos de la App
-- Directorio de Imágenes 
+- Directorio de Imágenes (Images).
+- Directorio de Javascript (JS files) incluido en app de mapas en la carpeta static.
+
+# Selenium webdriver para el rastreo de los usuarios via web
