@@ -20,4 +20,5 @@ una API Rest realizada con Django Rest Framework para la conexión con
 de los camiones en reparto para la asignación de las rutas más alternativas al tráfico 
 rodado en la ciudad de Las Palmas.
 
-#
+# Implementación de los archivos estáticos de la App
+- Directorio de Imágenes 
