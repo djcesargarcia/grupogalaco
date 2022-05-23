@@ -30,4 +30,5 @@ urlpatterns = [
     path('',include('driver_api.urls')),
     path('',include('routes_api.urls')),
     path('',include('order_api.urls')),
+    path('',include('customer_api.urls')),
 ]
