@@ -5,7 +5,7 @@ from .serializers import CustomerSerializer
 
 # Create your views here.
 
-class OrderViewSet(viewsets.ModelViewSet):
+class CustomerViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows orders to be viewed or edited
     """

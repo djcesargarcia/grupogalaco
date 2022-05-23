@@ -4,7 +4,7 @@ from django.db import models
 from rest_framework import serializers
 
 
-class CustomerSerializer(serializers.Serializers):
+class CustomerSerializer(serializers.Serializer):
     name = serializers.CharField(max_length=50)
     dni = serializers.CharField(max_length=9)
     phone_number = serializers.CharField(max_length=9)
