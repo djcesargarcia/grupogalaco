@@ -26,4 +26,8 @@ rodado en la ciudad de Las Palmas.
 - Directorio de Imágenes (Images).
 - Directorio de Javascript (JS files) incluido en app de mapas en la carpeta static.
 
-# Selenium webdriver para el rastreo de los usuarios via web
+# Añadido de plugins
+- Selenium webdriver 
+- Dockers
+- Jenkins
+- Integrar en Visual Studio Web: Jenkins Files escritos en el Editor.
