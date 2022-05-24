@@ -31,3 +31,9 @@ rodado en la ciudad de Las Palmas.
 - Dockers
 - Jenkins
 - Integrar en Visual Studio Web: Jenkins Files escritos en el Editor.
+
+# Gestion de Syslog con CSV con la importación a base de datos Mysql
+
+- Diseño de CSV ejemplo y app countries.
+- Managements commands with load_child_data.py
+- Migraciones para la subida del CSV a la bbdd.
