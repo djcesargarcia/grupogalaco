@@ -2,6 +2,7 @@ from unittest.util import _MAX_LENGTH
 from customer.models import Customer
 from django.db import models
 from rest_framework import serializers
+from article.models import Article
 
 
 class CustomerSerializer(serializers.Serializer):
@@ -11,7 +12,7 @@ class CustomerSerializer(serializers.Serializer):
     postal_code = serializers.CharField(max_length=5)
     adress = serializers.CharField(max_length=50)
     email = serializers.CharField(max_length=100)
-    article_customer = serializers.PrimaryKeyRelatedField(read_only=True) 
+    article_customer = serializers.PrimaryKeyRelatedField(write_only=True, queryset=Article.objects.all(), source='articles') 
     
     def create(self,validated_data):
         return Customer.objects.create(**validated_data)
