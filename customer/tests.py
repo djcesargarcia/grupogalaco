@@ -11,7 +11,7 @@ class SimpleTest(TestCase):
         self.assertEqual(response.status_code, 200)
         
     def setUp(self):
-        mycustomer = Customer.objects.create(name= 'Raul')
+        customer_name = Customer.objects.create(name= 'Raul')
     
     def test_customer_name(self):
         """Customer name is correctly"""
