@@ -1,5 +1,5 @@
 from django.test import TestCase
-from models import Article
+from article.models import Article
 
 # Create your tests here.
 

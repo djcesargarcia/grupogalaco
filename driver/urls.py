@@ -13,3 +13,4 @@ urlpatterns = [
     path('delete_drivers/<int:id>',views.delete_drivers, name="delete_drivers"),
     
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+

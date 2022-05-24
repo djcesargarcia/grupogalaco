@@ -1,6 +1,8 @@
 from distutils.command.upload import upload
+from fnmatch import translate
 from django.db import models
 from routes.models import Routes
+from django.utils.translation import gettext
 
 # Create your models here.
 
