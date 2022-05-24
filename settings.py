@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+from gettext import gettext
 from pathlib import Path
 import os
 import pytest
@@ -129,7 +130,12 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us-es'
+LANGUAGE_CODE = 'es-en'
+
+LANGUAGES = [
+    ('es',gettext('Spanish')),
+    ('en',gettext('English')),  
+]
 
 TIME_ZONE = 'UTC'
 
