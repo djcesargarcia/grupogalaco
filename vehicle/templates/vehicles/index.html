@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block titulo %} Vehicle List {% endblock %}
+
+{% block contenido %} 
+
+<div class="card">
+    <div class="card-header">
+        <a name="" id="" class="btn btn-success" href="{% url 'create_vehicles' %}" role="button">Add new vehicle</a>
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Vehicles</h4>
+        <table class="table">
+            <tr>
+                <td><p class="fw-bold">ID</p></td>
+                <td><p class="fw-bold">Brand</p></td>
+                <td><p class="fw-bold">Model</p></td>
+                <td><p class="fw-bold">Plate</p></td>
+                <td><p class="fw-bold">Wheels</p></td>
+                <td><p class="fw-bold">Image</p></td>
+                <td><p class="fw-bold">Actions</p></td>
+            </tr>
+            <thead>
+                {% for vehicle in vehicles %}
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ vehicle.id }}</td>
+                    <td>{{ vehicle.brand }}</td>
+                    <td>{{ vehicle.model }}</td>
+                    <td>{{ vehicle.plate }}</td>
+                    <td>{{ vehicle.wheels }}</td>
+                    <td>{{ vehicle.image }}</td>   
+                <td><a name="" id="" class="btn btn-info" href="{% url 'edit_vehicles' vehicle.id %}" role="button">Edit</a>
+                    | <a name="" id="" class="btn btn-danger" href="{% url 'delete_vehicles' vehicle.id %}" role="button">Delete</a></td>
+                </tr>
+                {% endfor %}
+                <tr>
+                    <div class="row">
+                        <form>
+                            <div class="col-2" style="padding-right: 0em;">
+                                <input class="form-control" type="search" name="qtext" placeholder="Filter your data here">
+                            </div>
+                            <div class="col-4" style="padding:0em;">
+                                <input type="submit" class="btn btn-primary" value="Search"> 
+                            </div>
+                        </form>
+                    </div>
+                </tr>
+       </tbody>
+   </table>
+   <nav aria-label="Page navigation example">
+        {% if vehicles.has_other_pages %}
+            <ul class="pagination justify-content-end">
+                  {% if vehicles.has_previous %}
+                    <li class="page-item"><a class="page-link " href="?page={{ vehicles.previous_page_number }}">Previous</a></li>
+                  {% else %}
+                    <li class="disabled"></li>
+                  {% endif %}
+                {% for i in vehicles.paginator.page_range %}
+                    {% if vehicles.number == i %}
+                        <li class="page-link"><span>{{ i }} <span class="sr-only"></span></span></li>
+                    {% else %}
+                        <li class="page-link"><a class="page-item" href="?page={{ i }}">{{ i }}</a></li>
+                    {% endif %}
+                {% endfor %}
+                {% if vehicles.has_next %}
+                    <li class="page-item"><a class="page-link" href="?page={{ providers.next_page_number }}">Next</a></li>
+                {% else %}
+                    <li class="disabled"></li>
+                {% endif %}
+                </ul>
+        {% endif %}
+    </nav>
+</div>
+</div>
+
+{% endblock %}
+
