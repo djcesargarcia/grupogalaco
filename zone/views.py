@@ -40,7 +40,7 @@ def edit_zones(request, id):
     return render(request,'zones/edit.html',{'form':form})
 
 @login_required
-def delete_orders(request, id):
+def delete_zones(request, id):
     order = Zone.objects.get(id=id)
     order.delete()
     return redirect('zones')
