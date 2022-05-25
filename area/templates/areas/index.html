@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% block titulo %} Article List {% endblock %}
+
+{% block contenido %} 
+
+<div class="card">
+    <div class="card-header">
+        <a name="" id="" class="btn btn-success" href="{% url 'create_areas' %}" role="button">Add new area</a>
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Articles</h4>
+        <table class="table">
+            <tr>
+                <td><p class="fw-bold">ID</p></td>
+                <td><p class="fw-bold">Name</p></td>
+                <td><p class="fw-bold">Postal Code</p></td>
+                <td><p class="fw-bold">Image</p></td>
+                <td><p class="fw-bold">Municipality</p></td>
+                <td><p class="fw-bold">Actions</p></td>
+            </tr>
+            <thead>
+                {% for area in areas %}
+            </thead>
+            <tbody>
+               
+                <tr>
+                    <td>{{ area.id }}</td>
+                    <td>{{ area.name }}</td>
+                    <td>{{ area.postal_code }}</td>
+                    <td>{{ article.municipality }}</td>
+                    <td>
+                        <img src="{{ article.image.url }}" height="100">
+                    </td>
+                    <td><a name="" id="" class="btn btn-info" href="{% url 'edit_areas' area.id %}" role="button">Edit</a>
+                         | <a name="" id="" class="btn btn-danger" href="{% url 'delete_areas' area.id %}" role="button">Delete</a></td>
+                </tr>
+                {% endfor %}
+                <tr>
+                    <div class="row">
+                        <form>
+                            <div class="col-2" style="padding-right: 0em;">
+                                <input class="form-control" type="search" name="qtext" placeholder="Filter your data here">
+                            </div>
+                            <div class="col-4" style="padding:0em;">
+                                <input type="submit" class="btn btn-primary" value="Search"> 
+                            </div>
+                        </form>
+                    </div>
+                </tr>
+            </tbody>
+        </table>
+        <nav aria-label="Page navigation example">
+            {% if articles.has_other_pages %}
+                <ul class="pagination justify-content-end">
+                      {% if articles.has_previous %}
+                        <li class="page-item"><a class="page-link " href="?page={{ articles.previous_page_number }}">Previous</a></li>
+                      {% else %}
+                        <li class="disabled"></li>
+                      {% endif %}
+                    {% for i in articles.paginator.page_range %}
+                        {% if articles.number == i %}
+                            <li class="page-link"><span>{{ i }} <span class="sr-only"></span></span></li>
+                        {% else %}
+                            <li class="page-link"><a class="page-item" href="?page={{ i }}">{{ i }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+                    {% if articles.has_next %}
+                        <li class="page-item"><a class="page-link" href="?page={{ articles.next_page_number }}">Next</a></li>
+                    {% else %}
+                        <li class="disabled"></li>
+                    {% endif %}
+                    </ul>
+            {% endif %}
+        </nav>
+        
+    </div>
+</div>
+
+{% endblock %}
