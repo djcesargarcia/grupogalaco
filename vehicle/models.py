@@ -13,7 +13,6 @@ class Vehicule(models.Model):
     plate = models.CharField(max_length=9, verbose_name='Plate')
     wheels = models.IntegerField(max_digits=1, verbose_name='Wheels')
     image = models.ImageField(upload_to='images/', verbose_name='Imagen' ,null=True)
-    adress = models.CharField(max_length=100, verbose_name='Adress')
   
     def __str__(self):
         fila = "Name: "+ self.brand + " - " + "NIF: " + self.nif + " - " + "Adress: " + self.adress
