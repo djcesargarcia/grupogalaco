@@ -31,6 +31,7 @@ urlpatterns = [
     path('', include('area.urls')),
     path('', include('zone.urls')),
     path('', include('dock.urls')),
+    path('', include('vehicle.urls')),
     path('driver_api/', include('driver_api.urls')),
     path('routes_api/', include('routes_api.urls')),
     path('provider_api/', include('provider_api.urls')),

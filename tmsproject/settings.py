@@ -53,7 +53,7 @@ INSTALLED_APPS = [
     'vehicle',
     'zone',
     'area',
-    'dock'
+    'dock',
 ]
 
 MIDDLEWARE = [
