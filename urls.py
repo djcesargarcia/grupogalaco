@@ -33,4 +33,5 @@ urlpatterns = [
     path('',include('customer_api.urls')),
     path('', include('article_api.urls')),
     path('', include('loadinplatform_api.urls')),
+    path('', include('zone_api.urls')),
 ]
