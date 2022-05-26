@@ -7,7 +7,7 @@ from distutils.command.upload import upload
 class Zone(models.Model):
     id = models.AutoField(primary_key=True, verbose_name="ID")
     name = models.CharField(max_length=50, verbose_name="Name")
-    postal_code = models.CharField(max_length=100, verbose_name="Postal Code")
+    postal_code = models.CharField(max_length=5, verbose_name="Postal Code")
     image = models.ImageField(upload_to='images/', verbose_name='Imagen' ,null=True)
     city = models.CharField(max_length=50, verbose_name="City")
     population =  models.CharField(max_length=50, verbose_name="Population")
