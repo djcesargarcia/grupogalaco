@@ -53,7 +53,9 @@ INSTALLED_APPS = [
     'rest_framework',
     'country',
     'maps',
-    'provider', 
+    'provider',
+    'area',
+    
 ]
 
 MIDDLEWARE = [

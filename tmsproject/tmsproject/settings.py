@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'driver',
     'rest_framework',
-    'driver_api'
+    'driver_api',
 ]
 
 MIDDLEWARE = [
