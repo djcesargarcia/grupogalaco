@@ -4,7 +4,7 @@ from rest_framework import permissions
 from .serializers import LoadingPlatformSerializer
 
 
-class DriverViewSet(viewsets.ModelViewSet):
+class LoadingPlatformViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows drivers to be viewed or edited.
     """
