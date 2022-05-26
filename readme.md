@@ -21,7 +21,8 @@ una API Rest realizada con Django Rest Framework para la conexión con
 - Area
 - Customer
 - Distance (Not available)
-- Loading Platform (Load Lorries)
+- Loading Platform (Load Lorries) SP: Muelles.
+
 
 # Mapa para la visualización en tiempo real de la logística
 - Implementación con Leaflet para la captación de la geolocalización en todo momento
