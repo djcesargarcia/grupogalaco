@@ -9,14 +9,14 @@
         <a name="" id="" class="btn btn-success" href="{% url 'create_areas' %}" role="button">Add new area</a>
     </div>
     <div class="card-body">
-        <h4 class="card-title">Articles</h4>
+        <h4 class="card-title">Areas</h4>
         <table class="table">
             <tr>
                 <td><p class="fw-bold">ID</p></td>
                 <td><p class="fw-bold">Name</p></td>
                 <td><p class="fw-bold">Postal Code</p></td>
-                <td><p class="fw-bold">Image</p></td>
                 <td><p class="fw-bold">Municipality</p></td>
+                <td><p class="fw-bold">Image</p></td>
                 <td><p class="fw-bold">Actions</p></td>
             </tr>
             <thead>
@@ -28,9 +28,9 @@
                     <td>{{ area.id }}</td>
                     <td>{{ area.name }}</td>
                     <td>{{ area.postal_code }}</td>
-                    <td>{{ article.municipality }}</td>
+                    <td>{{ area.municipality }}</td>
                     <td>
-                        <img src="{{ article.image.url }}" height="100">
+                        <img src="{{ area.image.url }}" height="100">
                     </td>
                     <td><a name="" id="" class="btn btn-info" href="{% url 'edit_areas' area.id %}" role="button">Edit</a>
                          | <a name="" id="" class="btn btn-danger" href="{% url 'delete_areas' area.id %}" role="button">Delete</a></td>
