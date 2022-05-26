@@ -35,6 +35,6 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('customer_api/', include('customer_api.urls')),
     path('article_api/', include('article_api.urls')),
-    path('loadingplatform_api/', include('loadinplatform_api.urls')),
+    path('loadingplatform_api/', include('loadingplatform_api.urls')),
     path('zone_api/', include('zone_api.urls')),
 ]
