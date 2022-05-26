@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'provider',
     'driver_api',
     'vehicle',
+    'zone',
 ]
 
 MIDDLEWARE = [
