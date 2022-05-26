@@ -2,6 +2,7 @@ from distutils.command.upload import upload
 from fnmatch import translate
 from django.db import models
 from django.utils.translation import gettext
+from driver.models import Driver
 
 # Create your models here.
 
@@ -12,6 +13,7 @@ class Vehicle(models.Model):
     plate = models.CharField(max_length=9, verbose_name='Plate')
     wheels = models.IntegerField(max_length=1, verbose_name='Wheels')
     image = models.ImageField(upload_to='images/', verbose_name='Imagen' ,null=True)
+    driver_vehicle = models.ForeignKey(Driver, related_name='driver_vehicles', on_delete=models.CASCADE)
   
     def __str__(self):
         fila = "Name: "+ self.brand + " - " + "NIF: " + self.nif + " - " + "Adress: " + self.adress
