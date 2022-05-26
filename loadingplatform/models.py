@@ -9,7 +9,7 @@ from django.utils.translation import gettext
 class LoadingPlatform(models.Model):
     id = models.AutoField(primary_key=True, serialize=False)
     name = models.CharField(max_length=50, verbose_name='Name')
-    position = models.IntegerField(max_digits=2)
+    position = models.IntegerField()
     image = models.ImageField(upload_to='images/', verbose_name='Imagen' ,null=True)
     """ Add field vehicle related and consider weight and volumen of load """
         

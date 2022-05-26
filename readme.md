@@ -16,6 +16,12 @@ una API Rest realizada con Django Rest Framework para la conexión con
 - Order
 - Country
 - Article
+- Zone
+- Vehicle
+- Area
+- Customer
+- Distance (Not available)
+- Loading Platform (Load Lorries)
 
 # Mapa para la visualización en tiempo real de la logística
 - Implementación con Leaflet para la captación de la geolocalización en todo momento
