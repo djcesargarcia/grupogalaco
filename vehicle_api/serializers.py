@@ -1,5 +1,4 @@
 from rest_framework import serializers
-from article.models import Article
 from vehicle.models import Vehicle
 from django.contrib.auth.models import models
 
