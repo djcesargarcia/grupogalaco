@@ -13,10 +13,10 @@ class Vehicle(models.Model):
     plate = models.CharField(max_length=9, verbose_name='Plate')
     wheels = models.IntegerField(max_length=1, verbose_name='Wheels')
     image = models.ImageField(upload_to='images/', verbose_name='Imagen' ,null=True)
-    driver_vehicle = models.ForeignKey(Driver, related_name='driver_vehicles', on_delete=models.CASCADE)
+    driver_vehicle = models.ForeignKey(Driver, related_name='driver_vehicles', on_delete=models.CASCADE, verbose_name='Driver')
   
     def __str__(self):
-        fila = "Name: "+ self.brand + " - " + "NIF: " + self.nif + " - " + "Adress: " + self.adress
+        fila = "Brand: "+ self.brand + " - " + "Model: " + self.model + " - "+ "Plate: " + self.plate + " - "
         return fila
     
     def delete(self, using=None, keep_parents=False):
