@@ -6,7 +6,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 # Create your views here.
 @login_required
-def routes(request):
+def vehicles(request):
     if 'qtext' in request.GET:
         qtext = request.GET['qtext']
         vehicles = Vehicle.objects.filter(name__icontains=qtext)

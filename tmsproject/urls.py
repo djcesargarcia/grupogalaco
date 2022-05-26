@@ -28,6 +28,9 @@ urlpatterns = [
     path('', include('maps.urls')),
     path('', include('distance.urls')),
     path('', include('provider.urls')),
+    path('', include('area.urls')),
+    path('', include('zone.urls')),
+    path('', include('dock.urls')),
     path('driver_api/', include('driver_api.urls')),
     path('routes_api/', include('routes_api.urls')),
     path('provider_api/', include('provider_api.urls')),
@@ -35,7 +38,6 @@ urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     path('customer_api/', include('customer_api.urls')),
     path('article_api/', include('article_api.urls')),
-    path('loadingplatform_api/', include('loadingplatform_api.urls')),
     path('zone_api/', include('zone_api.urls')),
     path('vehicle_api/', include('vehicle_api.urls')),
 ]

@@ -41,6 +41,6 @@ def edit_zones(request, id):
 
 @login_required
 def delete_zones(request, id):
-    order = Zone.objects.get(id=id)
-    order.delete()
+    zone = Zone.objects.get(id=id)
+    zone.delete()
     return redirect('zones')

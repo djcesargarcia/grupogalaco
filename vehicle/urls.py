@@ -5,11 +5,11 @@ from . import views
 
 urlpatterns = [
     
-    path('vehicles/', views.routes , name="routes"),
-    path('vehicles/create', views.create_routes , name="create_routes"),
-    path('vehicles/edit', views.edit_routes , name="edit_routes"),
-    path('vehicles/edit/<int:id>',views.edit_routes, name="edit_routes"),
-    path('delete_vehicles/<int:id>',views.delete_routes, name="delete_routes"),
+    path('vehicles/', views.vehicles , name="vehicles"),
+    path('vehicles/create', views.create_vehicles , name="create_vehicles"),
+    path('vehicles/edit', views.edit_vehicles , name="edit_vehicles"),
+    path('vehicles/edit/<int:id>',views.edit_vehicles, name="edit_vehicles"),
+    path('delete_vehicles/<int:id>',views.delete_vehicles, name="delete_vehicles"),
       
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

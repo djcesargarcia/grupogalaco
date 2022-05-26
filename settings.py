@@ -54,8 +54,8 @@ INSTALLED_APPS = [
     'country',
     'maps',
     'provider',
-    'area',
-    
+    'area',  
+    'dock',
 ]
 
 MIDDLEWARE = [
