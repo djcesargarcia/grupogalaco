@@ -9,7 +9,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 def vehicles(request):
     if 'qtext' in request.GET:
         qtext = request.GET['qtext']
-        vehicles = Vehicle.objects.filter(name__icontains=qtext)
+        vehicles = Vehicle.objects.filter(brand__icontains=qtext)
     else: 
         vehicles = Vehicle.objects.all()
         page = request.GET.get('page',1)
