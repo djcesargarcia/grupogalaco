@@ -41,4 +41,5 @@ urlpatterns = [
     path('article_api/', include('article_api.urls')),
     path('zone_api/', include('zone_api.urls')),
     path('vehicle_api/', include('vehicle_api.urls')),
+    path('dock_api/', include('dock_api.urls')),
 ]
