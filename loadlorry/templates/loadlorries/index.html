@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% block titulo %} LoadLorry List {% endblock %}
+
+{% block contenido %} 
+
+<div class="card">
+    <div class="card-header">
+        <a name="" id="" class="btn btn-success" href="{% url 'create_drivers' %}" role="button">Add new LoadLorry</a>
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Drivers</h4>
+        <table class="table">
+            <tr>
+                <td><p class="fw-bold">ID</p></td>
+                <td><p class="fw-bold">Weight</p></td>
+                <td><p class="fw-bold">Volume</p></td>
+                <td><p class="fw-bold">MMA</p></td>
+                <td><p class="fw-bold">Tare</p></td>
+                <td><p class="fw-bold">Cuantity</p></td>
+                <td><p class="fw-bold">Empty Weight</p></td>
+                <td><p class="fw-bold">Total Weight</p></td>
+            </tr>
+            <thead>
+                {% for loadlorry in loadlorries %}
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ loadlorry.id }}</td>
+                    <td>{{ loadlorry.weight }}</td>
+                    <td>{{ loadlorry.volume }}</td>
+                    <td>{{ loadlorry.mma }}</td>
+                    <td>{{ loadlorry.tare }}</td>
+                    <td>{{ loadlorry.cuantity }}</td>
+                    <td>{{ loadlorry.empty_weight }}</td>
+                    <td>{{ loadlorry.total_weight }}</td>
+                    
+                    <td><a name="" id="" class="btn btn-info" href="{% url 'edit_loadlorries' loadlorry.id %}" role="button">Edit</a>
+                         | <a name="" id="" class="btn btn-danger" href="{% url 'delete_loadlorries' loadlorry.id %}" role="button">Delete</a></td>
+                </tr>
+                {% endfor %}
+                <tr>
+                    <div class="row">
+                        <form>
+                            <div class="col-2" style="padding-right: 0em;">
+                                <input class="form-control" type="search" name="qtext" placeholder="Filter your data here">
+                            </div>
+                            <div class="col-4" style="padding:0em;">
+                                <input type="submit" class="btn btn-primary" value="Search"> 
+                            </div>
+                        </form>
+                    </div>
+                </tr>
+            </tbody>
+        </table>
+        <nav aria-label="Page navigation example">
+            {% if loadlorries.has_other_pages %}
+                <ul class="pagination justify-content-end">
+                      {% if loadlorries.has_previous %}
+                        <li class="page-item"><a class="page-link " href="?page={{ loadlorries.previous_page_number }}">Previous</a></li>
+                      {% else %}
+                        <li class="disabled"></li>
+                      {% endif %}
+                    {% for i in loadlorries.paginator.page_range %}
+                        {% if loadlorries.number == i %}
+                            <li class="page-link"><span>{{ i }} <span class="sr-only"></span></span></li>
+                        {% else %}
+                            <li class="page-link"><a class="page-item" href="?page={{ i }}">{{ i }}</a></li>
+                        {% endif %}
+                    {% endfor %}
+                    {% if loadlorries.has_next %}
+                        <li class="page-item"><a class="page-link" href="?page={{ loadlorries.next_page_number }}">Next</a></li>
+                    {% else %}
+                        <li class="disabled"></li>
+                    {% endif %}
+                    </ul>
+            {% endif %}
+        </nav>
+    </div>
+</div>
+
+{% endblock %}
