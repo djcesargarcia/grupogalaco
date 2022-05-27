@@ -4,7 +4,7 @@ from rest_framework import permissions
 from .serializers import AreaSerializer
 
 
-class DriverViewSet(viewsets.ModelViewSet):
+class AreaViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows drivers to be viewed or edited.
     """
