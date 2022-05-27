@@ -3,7 +3,7 @@ from django.db import models
 # Create your models here.
 
 class LoadLorry(models.Model):
-    id = models.Autofield(primary_key=True, verbose_name="ID")
+    id = models.AutoField(primary_key=True, verbose_name="ID")
     weight = models.FloatField(max_digits=2, verbose_name="Weight")
     volume = models.FloatField(max_digits=2, verbose_name="Volume")
     mma = models.FloatField(max_digits=2, verbose_name="MMA")
