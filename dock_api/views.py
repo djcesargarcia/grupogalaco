@@ -6,7 +6,7 @@ from .serializers import DockSerializer
 
 # Create your views here.
 
-class CustomerViewSet(viewsets.ModelViewSet):
+class DockViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows orders to be viewed or edited
     """
