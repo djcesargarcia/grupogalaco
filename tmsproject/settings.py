@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'zone',
     'area',
     'dock',
+    'loadlorry',
 ]
 
 MIDDLEWARE = [

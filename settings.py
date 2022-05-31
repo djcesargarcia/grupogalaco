@@ -56,6 +56,7 @@ INSTALLED_APPS = [
     'provider',
     'area',  
     'dock',
+    'loadlorry'
 ]
 
 MIDDLEWARE = [
