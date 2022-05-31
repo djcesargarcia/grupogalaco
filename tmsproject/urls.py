@@ -32,6 +32,7 @@ urlpatterns = [
     path('', include('zone.urls')),
     path('', include('dock.urls')),
     path('', include('vehicle.urls')),
+    path('', include('loadlorry.urls')),
     path('driver_api/', include('driver_api.urls')),
     path('routes_api/', include('routes_api.urls')),
     path('provider_api/', include('provider_api.urls')),
@@ -43,4 +44,5 @@ urlpatterns = [
     path('vehicle_api/', include('vehicle_api.urls')),
     path('dock_api/', include('dock_api.urls')),
     path('area_api/', include('area_api.urls')),
+    path('loadlorry_api/', include('loadlorry_api.urls')),
 ]

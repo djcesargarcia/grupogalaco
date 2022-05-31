@@ -6,7 +6,7 @@ from .serializers import LoadLorrySerializer
 
 # Create your views here.
 
-class DockViewSet(viewsets.ModelViewSet):
+class LoadLorryViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows orders to be viewed or edited
     """
