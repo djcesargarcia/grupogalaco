@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, JsonResponse
-from numpy import VisibleDeprecationWarning
 from .models import LoadLorry
 from .forms import LoadLorryForm
 from django.contrib.auth.decorators import login_required

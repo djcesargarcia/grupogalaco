@@ -26,7 +26,10 @@ SECRET_KEY = 'django-insecure-p#_^_xx@n3&_wl-*u9!--)3&7c%&71z6$9yo#uv3geu!o5#1u2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    '10.0.2.2',
+    'localhost',
+]
 
 
 # Application definition
@@ -55,6 +58,7 @@ INSTALLED_APPS = [
     'area',
     'dock',
     'loadlorry',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -65,7 +69,13 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
+
+CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_WHITELIST = (
+    'http://localhost:8081',
+)
 
 ROOT_URLCONF = 'tmsproject.urls'
 
@@ -88,7 +98,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'tmsproject.wsgi.application'
 
 REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.IsAuthenticated',),
+    'DEFAULT_PERMISSION_CLASSES': ('rest_framework.permissions.AllowAny',),
     'DEFAULT_AUTHENTICATION_CLASSES': ('rest_framework.authentication.BasicAuthentication',),
 }
 
