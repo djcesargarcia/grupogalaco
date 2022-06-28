@@ -3,7 +3,6 @@ from .models import Order
 from .forms import OrderForm 
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-
 # Create your views here.
 
 @login_required
@@ -20,7 +19,6 @@ def orders(request):
         except EmptyPage:
             orders = paginator.page(paginator.num_pages)
     return render(request, 'orders/index.html', {'orders':orders})
-    
 
 @login_required
 def create_orders(request):

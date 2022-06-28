@@ -59,6 +59,8 @@ INSTALLED_APPS = [
     'dock',
     'loadlorry',
     'corsheaders',
+    'generatepdf',
+    'django',
 ]
 
 MIDDLEWARE = [
